@@ -1,3 +1,5 @@
+# translation function 
+
 def translate(phrase): 
   translation = ''
   for letter in phrase: 
