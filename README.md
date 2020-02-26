@@ -1,5 +1,2 @@
 # python
-python training and sample code
-
-
-## Test commit 
+This repo contains python training and sample projects. 
