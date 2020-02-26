@@ -1,7 +1,7 @@
 import turtle
 import os 
 
-# Setup screen
+# Setup and defines screen
 wn = turtle.Screen()
 wn.bgcolor('black')
 wn.title('Space Invaders')
@@ -19,8 +19,7 @@ for side in range(4):
     border_pen.lt(90)
 border_pen.hideturtle()
 
-
-#Create the player 
+# Create the player 
 player = turtle.Turtle()
 player.color('blue')
 player.shape('triangle')
@@ -28,5 +27,29 @@ player.penup()
 player.speed(0)
 player.setposition(0, -250)
 player.setheading(90)
+
+playerspeed = 15 
+
+# Move the player left and right
+def move_left():
+    '''moves player left'''
+    x = player.xcor()
+    x -= playerspeed
+    if x < -280: 
+        x = -280
+    player.setx(x)
+    
+def move_right():
+    '''moves player right'''   
+    x = player.xcor()
+    x += playerspeed
+    if x > 280: 
+        x = 280
+    player.setx(x)  
+  
+# Create keyboard bindings
+wn.listen()
+wn.onkey(move_left, 'Left')
+wn.onkey(move_right, 'Right')
 
 delay= input('Presen enter to finish')
