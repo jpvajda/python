@@ -45,7 +45,7 @@ player.setheading(90)
 
 playerspeed = 15 
 
-#Set number of enemies 
+#Set number of enemies
 number_of_enemies = 5
 #Create any empty list of enemies
 enemies = []
@@ -168,7 +168,7 @@ while True:
             #Update the score
             score += 10
             score_pen.clear()
-            score = 'Score: %s' %score
+            scorestring = 'Score: %s' %score
             score_pen.write(scorestring, False, align = 'Left', font=('Courier', 18, 'normal'))
         
         #check for collision with player
