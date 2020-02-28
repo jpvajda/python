@@ -21,6 +21,19 @@ for side in range(4):
     border_pen.lt(90)
 border_pen.hideturtle()
 
+# Set the score to 0
+score = 0
+
+#Draw the score 
+score_pen = turtle.Turtle()
+score_pen.speed(0)
+score_pen.color('white')
+score_pen.penup()
+score_pen.setposition(-290, 280)
+scorestring = 'Score: %s' %score
+score_pen.write(scorestring, False, align = 'left', font=('Courier', 18, 'normal'))
+score_pen.hideturtle()
+
 # Create the player 
 player = turtle.Turtle()
 player.color('blue')
@@ -139,7 +152,7 @@ while True:
                 y =e.ycor()
                 y -= 40  
                 e.sety(y)
-            #changes enemy direction    
+            #changes enemy direction   
             enemyspeed *= -1
            
             #check for collision of bullet with enemy
@@ -148,10 +161,15 @@ while True:
             bullet.hideturtle()
             bulletstate = 'ready'
             bullet.setposition(0, -400)
-        #reset enemy
+            #Reset enemy
             x = random.randint(-200, 200)
             y = random.randint(100, 250)
             enemy.setposition(x,y)
+            #Update the score
+            score += 10
+            score_pen.clear()
+            score = 'Score: %s' %score
+            score_pen.write(scorestring, False, align = 'Left', font=('Courier', 18, 'normal'))
         
         #check for collision with player
         if isCollision(player, enemy):
