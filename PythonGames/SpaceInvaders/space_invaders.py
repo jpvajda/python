@@ -68,7 +68,7 @@ for enemy in enemies:
     y = random.randint(100, 250)
     enemy.setposition(x, y)
   
-enemyspeed = 5
+enemyspeed = 4
 
 #Create the player's bullet
 bullet = turtle.Turtle()
@@ -109,6 +109,7 @@ def fire_bullet():
     '''Declare bulletstate as global, sets bullet'''
     global bulletstate
     if bulletstate == 'ready':
+        os.system('afplay python/python/PythonGames/SpaceInvaders/laser.wav&')
         bulletstate = 'fire'
     #Place the bullet to above the player
     x = player.xcor()
@@ -160,6 +161,7 @@ while True:
            
             #check for collision of bullet with enemy
         if isCollision(bullet, enemy):
+            os.system('afplay python/python/PythonGames/SpaceInvaders/explosion.wav&')
             #reset bullet
             bullet.hideturtle()
             bulletstate = 'ready'
@@ -176,6 +178,7 @@ while True:
         
         #check for collision with player
         if isCollision(player, enemy):
+            os.system('afplay python/python/PythonGames/SpaceInvaders/explosion.wav&')
             player.hideturtle()
             enemy.hideturtle()
             print('Game Over!')
