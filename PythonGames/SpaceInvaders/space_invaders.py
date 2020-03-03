@@ -10,8 +10,8 @@ wn.title('Space Invaders')
 wn.bgpic('python/python/PythonGames/SpaceInvaders/space_invaders_background.gif')
 
 #Register the shape 
-turtle.register_shape('invader.gif')
-turtle.register_shape('player.gif')
+wn.register_shape('python/python/PythonGames/SpaceInvaders/invader.gif')
+wn.register_shape('python/python/PythonGames/SpaceInvaders/player.gif')
 
 # Draw Border
 border_pen = turtle.Turtle()
@@ -42,8 +42,8 @@ score_pen.hideturtle()
 # Create the player 
 player = turtle.Turtle()
 player.color('blue')
-# player.shape('python/python/PythonGames/SpaceInvaders/player.gif')
-player.shape('/Users/jvajda/Documents/Github/python/python/PythonGames/SpaceInvaders/player.gif')
+player.shape('player.gif')
+player.shape('square')
 player.penup()
 player.speed(0)
 player.setposition(0, -250)
@@ -64,8 +64,8 @@ for i in range(number_of_enemies):
 # Creates the invaders
 for enemy in enemies: 
     enemy.color('red')
-    # enemy.shape('python/python/PythonGames/SpaceInvaders/invader.gif')
-    enemy.shape('/Users/jvajda/Documents/Github/python/python/PythonGames/SpaceInvaders/invader.gif')
+    enemy.shape('invader.gif')
+    enemy.shape('circle')
     enemy.penup()
     enemy.speed(0)
     x = random.randint(-200, 200)
