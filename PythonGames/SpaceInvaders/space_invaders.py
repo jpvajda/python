@@ -42,17 +42,17 @@ score_pen.hideturtle()
 # Create the player 
 player = turtle.Turtle()
 player.color('blue')
-player.shape('player.gif')
+# player.shape('player.gif') 
 player.shape('square')
 player.penup()
 player.speed(0)
 player.setposition(0, -250)
 player.setheading(90)
 
-playerspeed = 15 
+playerspeed = 20  
 
 #Set number of enemies
-number_of_enemies = 5
+number_of_enemies = 10 
 #Create any empty list of enemies
 enemies = []
 
@@ -64,7 +64,7 @@ for i in range(number_of_enemies):
 # Creates the invaders
 for enemy in enemies: 
     enemy.color('red')
-    enemy.shape('invader.gif')
+    # enemy.shape('invader.gif')
     enemy.shape('circle')
     enemy.penup()
     enemy.speed(0)
@@ -72,7 +72,7 @@ for enemy in enemies:
     y = random.randint(100, 250)
     enemy.setposition(x, y)
   
-enemyspeed = 2
+enemyspeed = 5
 
 #Create the player's bullet
 bullet = turtle.Turtle()
@@ -84,7 +84,7 @@ bullet.setheading(90)
 bullet.shapesize(0.5, 0.5)
 bullet.hideturtle()
 
-bulletspeed = 20
+bulletspeed = 30
 
 #Define bullet state
 #ready - ready to fire
